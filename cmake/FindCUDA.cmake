@@ -1,0 +1,11 @@
+if (CMAKE_CUDA_COMPILER)
+    set(HAVE_CUDA_H ON)
+else()
+    include(CheckLanguage)
+    check_language(CUDA)
+
+    if (CMAKE_CUDA_COMPILER)
+        set(HAVE_CUDA_H ON)
+        enable_language(CUDA)
+    endif()
+endif()
